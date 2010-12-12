@@ -150,12 +150,18 @@ class Cldr extends \lithium\g11n\catalog\Adapter {
 	 * Parses a XML file and retrieves data from it using an XPATH query
 	 * and a given closure.
 	 *
+	 * If possible will activate small nodes allocation optimization
+	 * when interfacing with libxml. Some options are available only
+	 * when using libxml with version >= 2.6.21.
+	 *
 	 * @param string $file Absolute path to the XML file.
 	 * @param string $query An XPATH query to select items.
 	 * @return array
 	 */
 	protected function _parseXml($file, $query) {
-		$document = new SimpleXmlElement($file, LIBXML_COMPACT, true);
+		$options = defined('LIBXML_COMPACT') ? LIBXML_COMPACT : 0;
+
+		$document = new SimpleXmlElement($file, $options, true);
 		return $document->xpath($query);
 	}
 }
