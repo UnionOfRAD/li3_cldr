@@ -25,8 +25,10 @@ Libraries::add('li3_cldr');
 ```
 
 Currently the plugin does not contain the actual CLDR data. We must take the following steps to install it. Download the ZIP file of the latest release, unpack it into a temporary directory and move the common directory into place.
+
 ```sh
 curl http://unicode.org/Public/cldr/1.8.0/core.zip --O core.zip
 unzip core.zip -d /tmp
 mv /tmp/common /path/to/project/libraries/li3_cldr/resources/g11n
 ```
+
