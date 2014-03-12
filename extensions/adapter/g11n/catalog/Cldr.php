@@ -84,8 +84,9 @@ class Cldr extends \lithium\g11n\catalog\Adapter {
 				return $this->_readCurrency($path, $locale);
 			case 'language':
 			case 'script':
-			case 'territory':
 				return $this->_readList($path, $category, $locale);
+			case 'territory':
+				return $this->_readTerritory($path, $locale);
 			case 'validation':
 				return $this->_readValidation($path, $locale);
 		}
@@ -141,6 +142,31 @@ class Cldr extends \lithium\g11n\catalog\Adapter {
 			$data = $this->_merge($data, array(
 				'id' => (string) $node['type'],
 				'translated' => (string) current($displayNames)
+			));
+		}
+		return $data;
+	}
+
+	protected function _readTerritory($path, $locale) {
+		$file = "{$path}/main/{$locale}.xml";
+		$query = "/ldml/localeDisplayNames/territories/territory";
+
+		$nodes = $this->_parseXml($file, $query);
+		$data = array();
+
+		foreach ($nodes as $node) {
+			$attributes = $node->attributes();
+
+			if (isset($attributes['alt']) && (string) $attributes['alt'] === 'variant') {
+				continue;
+			}
+			if (isset($attributes['draft'])) {
+				continue;
+			}
+
+			$data = $this->_merge($data, array(
+				'id' => (string) $node['type'],
+				'translated' => (string) $node
 			));
 		}
 		return $data;
