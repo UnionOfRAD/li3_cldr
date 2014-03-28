@@ -93,7 +93,7 @@ class Cldr extends \lithium\g11n\catalog\Adapter {
 	}
 
 	protected function _readValidation($path, $locale) {
-		if (!$territory = Locale::territory($locale)) {
+		if ($locale === 'root' || !$territory = Locale::territory($locale)) {
 			return null;
 		}
 		$data = array();
