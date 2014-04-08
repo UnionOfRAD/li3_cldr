@@ -18,5 +18,8 @@
     "require": {
         "php": ">=5.3.6",
         "composer/installers": "~1.0"
-    }
+    },
+    "post-install-cmd": [
+        "curl http://unicode.org/Public/cldr/1.8.0/core.zip --O /tmp/core.zip && unzip /tmp/core.zip -d /tmp && mv /tmp/common ./resources/g11n"
+    ]
 }
