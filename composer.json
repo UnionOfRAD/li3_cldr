@@ -21,7 +21,7 @@
     },
     "scripts": {
       "post-install-cmd": [
-          "test ! -d /tmp/cldr && mkdir /tmp/cldr && curl http://unicode.org/Public/cldr/1.8.0/core.zip --O /tmp/cldr.zip && unzip /tmp/cldr.zip -d /tmp/cldr; cp -r /tmp/cldr/common ./resources/g11n"
+          "test ! -d /tmp/cldr && mkdir /tmp/cldr && curl http://unicode.org/Public/cldr/1.8.0/core.zip -o /tmp/cldr.zip && unzip /tmp/cldr.zip -d /tmp/cldr; cp -r /tmp/cldr/common ./resources/g11n"
       ]
     }
 }
