@@ -1,4 +1,4 @@
-### Introduction
+# li3_cldr
 
 From the [CLDR project site](http://cldr.unicode.org/index):
 
@@ -12,11 +12,11 @@ The core g11n implementation in Lithium already utilizes the CLDR indirectly thr
  * List and translation of territories (`territory`).
  * List and translation of scripts (`script`).
 
-### Installation
+## Installation
 
 Clone the project into your libraries directory.
 ```
-git clone code@rad-dev.org:li3_cldr.git /path/to/project/libraries/li3_cldr
+git clone git@github.com:UnionOfRAD/li3_cldr.git /path/to/project/libraries/li3_cldr
 ```
 
 Make your Lithium app aware of the plugin by adding the following line to your bootstrap/libraries.php file.
