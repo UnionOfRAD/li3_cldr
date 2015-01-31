@@ -6,8 +6,20 @@
  * @license       http://opensource.org/licenses/bsd-license.php The BSD License
  */
 
+use \ConfigException;
 use \lithium\g11n\Catalog;
 
+$insideLibrary = dirname(__DIR__) . '/resources/g11n';
+$insideApp = LITHIUM_APP_PATH . '/resources/g11n/cldr';
+
+if (is_dir($insideLibrary . '/main')) {
+	$path = $insideLibrary;
+} elseif (is_dir($insideApp . '/main')) {
+	$path = $insideApp;
+} else {
+	$message = "CLDR resources could not be found at either `{$insideLibrary}` or `{$insideApp}`.";
+	throw new ConfigException($message);
+}
 /**
  * Add the configuration for the cldr resource to the existing
  * `Catalog` configurations.
@@ -15,7 +27,7 @@ use \lithium\g11n\Catalog;
 Catalog::config(array(
 	'cldr' => array(
 		'adapter' => 'Cldr',
-		'path' => dirname(__DIR__) . '/resources/g11n'
+		'path' => $path
 )) + Catalog::config());
 
 ?>

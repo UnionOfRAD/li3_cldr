@@ -24,11 +24,16 @@ Make your Lithium app aware of the plugin by adding the following line to your b
 Libraries::add('li3_cldr');
 ```
 
+## Resource Dependencies
+
 Currently the plugin does not contain the actual CLDR data. We must take the following steps to install it. Download the ZIP file of the latest release, unpack it into a temporary directory and move the common directory into place.
 
 ```sh
 curl http://unicode.org/Public/cldr/1.8.0/core.zip --O core.zip
 unzip core.zip -d /tmp
+
 mv /tmp/common /path/to/project/libraries/li3_cldr/resources/g11n
+# ... or ...
+mv /tmp/common /path/to/project/app/resource/g11n/cldr
 ```
 
