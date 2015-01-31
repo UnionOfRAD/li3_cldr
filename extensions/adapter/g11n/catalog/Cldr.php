@@ -20,7 +20,7 @@ use \lithium\g11n\Locale;
  * The directory the `'path'` configuration setting is pointing to should contain the contents
  * from the CLDR as distributed with i.e. `core.zip` which can be downloaded from the unicode site.
  *
- * The directory as configured by the `'path'` setting which equals the `commons` directory
+ * The directory as configured by the `'path'` setting which equals the `common` directory
  * from `core.zip` should be structured according to the following example.
  *
  * {{{
