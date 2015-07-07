@@ -6,8 +6,10 @@
  * @license       http://opensource.org/licenses/bsd-license.php The BSD License
  */
 
-use \ConfigException;
-use \lithium\g11n\Catalog;
+namespace li3_cldr\config;
+
+use ConfigException;
+use lithium\g11n\Catalog;
 
 $insideLibrary = dirname(__DIR__) . '/resources/g11n';
 $insideApp = LITHIUM_APP_PATH . '/resources/g11n/cldr';
