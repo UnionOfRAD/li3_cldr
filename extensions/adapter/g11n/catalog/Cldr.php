@@ -185,6 +185,9 @@ class Cldr extends \lithium\g11n\catalog\Adapter {
 	 * @return array
 	 */
 	protected function _parseXml($file, $query) {
+		if (!file_exists($file)) {
+			return array();
+		}
 		$options = defined('LIBXML_COMPACT') ? LIBXML_COMPACT : 0;
 
 		$document = new SimpleXmlElement($file, $options, true);
