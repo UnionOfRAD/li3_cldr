@@ -1,7 +1,7 @@
 {
     "name": "unionofrad/li3_cldr",
     "type": "lithium-library",
-    "description": "A Lithium plugin adding support for querying Unicode's CLDR.",
+    "description": "A li₃ plugin adding support for querying Unicode's CLDR.",
     "keywords": ["php", "cldr", "unicode", "g11n", "lithium", "li3"],
     "homepage": "http://li3.me",
     "license": "BSD-3-Clause",

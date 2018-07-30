@@ -4,7 +4,7 @@ From the [CLDR project site](http://cldr.unicode.org/index):
 
 > The Unicode CLDR provides key building blocks for software to support the world's languages, with the largest and most extensive standard repository of locale data available. This data is used by a wide spectrum of companies for their software internationalization and localization, adapting software to the conventions of different languages [...]
 
-The core g11n implementation in Lithium already utilizes the CLDR indirectly through the [intl php extension](http://php.net/manual/en/book.intl.php), which makes use of [ICU](http://site.icu-project.org/), which in turn is based upon the data provided by the [CLDR](http://cldr.unicode.org/index). So at first sight there seems to be no need to access the CLDR directly. As more and more features are added to the intl extension it does not provide a way to access certain data yet. With the CLDR Catalog adapter contained in this plugin you can query the CLDR for this data. Currently there's support for:
+The core g11n implementation in li₃ already utilizes the CLDR indirectly through the [intl php extension](http://php.net/manual/en/book.intl.php), which makes use of [ICU](http://site.icu-project.org/), which in turn is based upon the data provided by the [CLDR](http://cldr.unicode.org/index). So at first sight there seems to be no need to access the CLDR directly. As more and more features are added to the intl extension it does not provide a way to access certain data yet. With the CLDR Catalog adapter contained in this plugin you can query the CLDR for this data. Currently there's support for:
 
  * Postal code validation rules for most countries (`validation.postalCode`).
  * List and translation of currencies (`currency`).
@@ -19,7 +19,7 @@ Clone the project into your libraries directory.
 git clone git@github.com:UnionOfRAD/li3_cldr.git /path/to/project/libraries/li3_cldr
 ```
 
-Make your Lithium app aware of the plugin by adding the following line to your bootstrap/libraries.php file.
+Make your li₃ app aware of the plugin by adding the following line to your bootstrap/libraries.php file.
 ```
 Libraries::add('li3_cldr');
 ```
